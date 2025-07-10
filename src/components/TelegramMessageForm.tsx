@@ -61,7 +61,7 @@ export default function TelegramMessageForm({
               inputClass="p-5 h-7 text-sm bg-white !mt-0 w-full"
               labelClass="shrink-0"
               messageClass="hidden"
-              placeholder="@nickname"
+              placeholder="@никнейм"
             />
 
             <TextInputWithLabel<SendTelegramMessageFormType>
