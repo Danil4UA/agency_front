@@ -11,7 +11,7 @@ import TelegramMessageForm from '@/components/TelegramMessageForm';
 export default function Home() {
   const [showVideo, setShowVideo] = useState(false);
   const [isTelegramFormOpen, setIsTelegramFormOpen] = useState(false);
-  const [isSuccessDialogOpened, setIsSuccessDialogOpened] = useState(true);
+  const [isSuccessDialogOpened, setIsSuccessDialogOpened] = useState(false);
 
   const handleVideoClick = () => {
     setShowVideo(true);
