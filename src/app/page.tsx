@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { PlayCircle, MessageCircle, Share2, Bookmark, AtSign } from 'lucide-react';
+import { PlayCircle, MessageCircle } from 'lucide-react';
 import SuccessDialog from '@/components/SuccessDialog';
 import TelegramMessageForm from '@/components/TelegramMessageForm';
 
@@ -27,11 +27,11 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               КАК НАШИ ЛИДГЕН ПРОЕКТЫ <br />
               <span className="text-orange-500">ПОЛУЧАЮТ СТАБИЛЬНЫЙ</span>  <br />
               ПОТОК КВАЛ КЛИЕНТОВ? <br />
-              <Badge variant="destructive" className="text-2xl md:text-3xl px-4 py-2 bg-orange-500 hover:bg-orange-600">
+              <Badge variant="destructive" className="text-lg md:text-2xl lg:text-3xl px-3 py-1 md:px-4 md:py-2 bg-orange-500 hover:bg-orange-600">
                 ROMI - 250% +
               </Badge>
             </h1>
@@ -71,7 +71,7 @@ export default function Home() {
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
               РАССКАЖИ О СВОЕМ ПРОЕКТЕ <br />
-              И ПОЛУЧИ РЕШЕНИЯ УЖЕ НА ПЕРВОМ ЗВОНКЕ?
+              И ПОЛУЧИ РЕШЕНИЯ УЖЕ НА ПЕРВОМ ЗВОНКЕ!
             </h2>
             
             <Button 
@@ -82,30 +82,6 @@ export default function Home() {
               <MessageCircle className="w-6 h-6 mr-3" />
               Связаться в Telegram
             </Button>
-          </div>
-
-          <div className="flex justify-center items-center space-x-8 pt-8 border-t border-gray-200">
-            <div className="flex flex-col items-center text-gray-400 hover:text-orange-500 transition-colors cursor-pointer">
-              <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center mb-1">
-                <div className="w-3 h-3 bg-current rounded-full"></div>
-              </div>
-              <span className="text-xs">Главная</span>
-            </div>
-            
-            <div className="flex flex-col items-center text-gray-400 hover:text-orange-500 transition-colors cursor-pointer">
-              <Share2 className="w-8 h-8 mb-1" />
-              <span className="text-xs">Поделиться</span>
-            </div>
-            
-            <div className="flex flex-col items-center text-gray-400 hover:text-orange-500 transition-colors cursor-pointer">
-              <Bookmark className="w-8 h-8 mb-1" />
-              <span className="text-xs">Сохранить</span>
-            </div>
-            
-            <div className="flex flex-col items-center text-gray-400 hover:text-orange-500 transition-colors cursor-pointer">
-              <AtSign className="w-8 h-8 mb-1" />
-              <span className="text-xs">Контакты</span>
-            </div>
           </div>
         </div>
       </div>

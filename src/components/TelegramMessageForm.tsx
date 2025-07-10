@@ -65,19 +65,20 @@ export default function TelegramMessageForm({
             />
 
             <TextInputWithLabel<SendTelegramMessageFormType>
-              label="Ваше Сообщение (необязательно)"
+              label="Ваше Сообщение"
               nameInSchema="message"
               itemClass="flex flex-col gap-3 items-start"
               inputClass="p-5 h-7 text-sm bg-white !mt-0 w-full"
               labelClass="shrink-0"
               messageClass="hidden"
-              placeholder="Введите ваше сообщение"
+              placeholder="Сообщение (необязательно)"
             />
             <div className="flex gap-5 self-center">
               <Button
                 type="button"
                 variant="outline"
                 onClick={() => setIsOpen(false)}
+                className="cursor-pointer"
               >
                 Отмена
               </Button>
@@ -86,6 +87,7 @@ export default function TelegramMessageForm({
                 text={"Cвязаться"}
                 isLoading={isSaving}
                 variant="default"
+                className="bg-orange-500 hover:bg-orange-600"
               />
             </div>
             </form>

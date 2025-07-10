@@ -39,7 +39,7 @@ export default function ErrorDialog({
             ) : (
               <p className="font-sans">{message}</p>
             )}
-            <Button type="button" onClick={onCloseDialog} className="self-center">
+            <Button type="button" onClick={onCloseDialog} className="self-center bg-orange-500 hover:bg-orange-600">
               Ok
             </Button>
           </div>
