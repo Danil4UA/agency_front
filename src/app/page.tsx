@@ -5,13 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { PlayCircle, MessageCircle } from 'lucide-react';
-import SuccessDialog from '@/components/SuccessDialog';
 import TelegramMessageForm from '@/components/TelegramMessageForm';
 
 export default function Home() {
   const [showVideo, setShowVideo] = useState(false);
   const [isTelegramFormOpen, setIsTelegramFormOpen] = useState(false);
-  const [isSuccessDialogOpened, setIsSuccessDialogOpened] = useState(false);
 
   const handleVideoClick = () => {
     setShowVideo(true);
@@ -88,12 +86,6 @@ export default function Home() {
       <TelegramMessageForm
         isOpen={isTelegramFormOpen}
         setIsOpen={setIsTelegramFormOpen}
-      />
-      <SuccessDialog 
-        isOpen={isSuccessDialogOpened}
-        setIsOpen={setIsSuccessDialogOpened}
-        onClose={() => setIsSuccessDialogOpened(false)}
-        title="Спасибо за ваше обращение. Мы с вами свяжемся в ближайшее время"
       />
     </div>
   );

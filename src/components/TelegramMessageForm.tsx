@@ -9,6 +9,7 @@ import ErrorDialog from "./ErrorDialog";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import userServices from "@/services/userServices";
+import SuccessDialog from "./SuccessDialog";
 
 type ITelegramMessageForm = {
     isOpen: boolean;
@@ -20,7 +21,8 @@ export default function TelegramMessageForm({
 }: ITelegramMessageForm){
     const [isSaving, setIsSaving] = useState<boolean>(false);
     const [isErrorDialogOpen, setIsErrorDialogOpen] = useState<boolean>(false);
-
+    const [isSuccessDialogOpened, setIsSuccessDialogOpened] = useState(false);
+  
     const form = useForm<SendTelegramMessageFormType>({
         resolver: zodResolver(sendTelegramMessageSchema),
         defaultValues: {
@@ -37,6 +39,7 @@ export default function TelegramMessageForm({
                 name: undefined,
                 message: undefined,
             });
+            setIsSuccessDialogOpened(true);
         } catch {
             setIsErrorDialogOpen(true);
         } finally {
@@ -98,6 +101,12 @@ export default function TelegramMessageForm({
         onCloseDialog={() => setIsErrorDialogOpen(false)}
         title="Произошла ошибка при отправке формы"
         message="Приносим извинения за неудобства, пожалуйста попробуйте еще раз позже"
+      />
+      <SuccessDialog
+        isOpen={isSuccessDialogOpened}
+        setIsOpen={setIsSuccessDialogOpened}
+        onClose={() => setIsSuccessDialogOpened(false)}
+        title="Спасибо за ваше обращение. Мы с вами свяжемся в ближайшее время"
       />
     </Dialog>
     )
