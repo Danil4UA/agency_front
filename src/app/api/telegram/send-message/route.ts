@@ -9,6 +9,10 @@ export async function POST(request: Request) {
         const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
         const CHAT_ID = process.env.CHAT_ID;
 
+            console.log('TELEGRAM_BOT_TOKEN exists:', !!TELEGRAM_BOT_TOKEN);
+            console.log('CHAT_ID exists:', !!CHAT_ID);
+            console.log('TELEGRAM_BOT_TOKEN length:', TELEGRAM_BOT_TOKEN?.length);
+            console.log('CHAT_ID value:', CHAT_ID);
         if (!TELEGRAM_BOT_TOKEN || !CHAT_ID) {
             return NextResponse.json(
                 { error: 'Missing Telegram configuration' }, 

@@ -4,16 +4,12 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { PlayCircle, MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import TelegramMessageForm from '@/components/TelegramMessageForm';
 
 export default function Home() {
-  const [showVideo, setShowVideo] = useState(false);
   const [isTelegramFormOpen, setIsTelegramFormOpen] = useState(false);
 
-  const handleVideoClick = () => {
-    setShowVideo(true);
-  };
 
   const handleButtonClick = () => {
     setIsTelegramFormOpen(true)
@@ -23,7 +19,6 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          
           <div className="text-center mb-12">
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               КАК НАШИ ЛИДГЕН ПРОЕКТЫ <br />
@@ -39,17 +34,6 @@ export default function Home() {
             <CardContent className="p-0">
               <div className="relative">
                 <div className="aspect-video bg-gradient-to-r from-gray-800 to-gray-900">
-                  {!showVideo ? (
-                    <div className="flex items-center justify-center h-full">
-                      <div className="text-center">
-                        <PlayCircle 
-                          className="w-16 h-16 text-orange-500 mx-auto mb-2 cursor-pointer hover:text-orange-400 transition-colors" 
-                          onClick={handleVideoClick}
-                        />
-                        <p className="text-white text-sm">Жми видео и узнай 👆</p>
-                      </div>
-                    </div>
-                  ) : (
                     <iframe
                       width="100%"
                       height="100%"
@@ -60,7 +44,6 @@ export default function Home() {
                       allowFullScreen
                       className="absolute inset-0 w-full h-full"
                     />
-                  )}
                 </div>
               </div>
             </CardContent>
